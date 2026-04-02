@@ -2,6 +2,7 @@ import torch
 import sys
 import numpy as np
 import pandas as pd
+from datetime import datetime
 from transformers import AutoTokenizer, AutoModelForSequenceClassification
 from pathlib import Path
 from torch.utils.data import Dataset, DataLoader
@@ -85,7 +86,7 @@ def save_model(model, tokenizer, dataset_name: str) -> Path:
             The directory the model was saved to.
     """
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-    save_dir = OUTPUTS_DIR / f"{dataset_name}_{timestamp}"
+    save_dir = OUTPUT_DIR / f"{dataset_name}_{timestamp}"
     save_dir.mkdir(parents=True, exist_ok=True)
     model.save_pretrained(save_dir)
     tokenizer.save_pretrained(save_dir)
