@@ -47,7 +47,7 @@ def clean_normalize_dataset(data):
     data = data.drop_duplicates(['title'])
 
     rows = len(data)
-    data = data.sample(n=rows, random_state=seed) # I 
+    data = data.sample(n=rows, random_state=seed) 
     return data
 
 # created a functionality for split. Did 60% for training, 20% for testing and 20% for validation. 
