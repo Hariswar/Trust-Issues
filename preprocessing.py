@@ -8,7 +8,7 @@ data_format = ['title', 'text', 'label']
 boolean = True
 whitespace_check = r'\s+'
 url_check = r'(http\S+|www\S+)'
-character_check = r'[^a-zA-Z0-9\s!?]'
+character_check = r'[^a-zA-Z0-9\s]'
 symbol_check = r'@[A-Za-z0-9_]+'
 seed = 1
 
@@ -33,16 +33,27 @@ def clean_normalize_dataset(data):
     data = data.drop_duplicates(['text'])
     data = data.drop_duplicates(['title'])
     text_data = data['text'].str.lower()
+    title_data = data['title'].str.lower()
     data['text'] = text_data
+    data['title'] = title_data
     data['text'] = data['text'].str.strip()
+    data['title'] = data['title'].str.strip()
     whitespace = data['text'].str.replace(whitespace_check, ' ', regex=boolean)
+    whitespace_title = data['title'].str.replace(whitespace_check, ' ', regex=boolean)
     data['text'] = whitespace
+    data['title'] = whitespace_title
     url = data['text'].str.replace(url_check, '', regex=boolean)
+    url_title = data['title'].str.replace(url_check, '', regex=boolean)
     data['text'] = url
+    data['title'] = url_title
     characters = data['text'].str.replace(character_check, '', regex=boolean)
+    characters_title = data['title'].str.replace(character_check, '', regex=boolean)
     data['text'] = characters
+    data['title'] = characters_title
     check = data['text'].str.replace(symbol_check, '', regex=boolean)
+    check_title = data['title'].str.replace(symbol_check, '', regex=boolean)
     data['text'] = check
+    data['title'] = check_title
     data = data.drop_duplicates(['text'])
     data = data.drop_duplicates(['title'])
 
@@ -76,18 +87,11 @@ dataset_two = clean_normalize_dataset(read_dataset_two)
 dataset_two_train, dataset_two_test, dataset_two_validation = split_dataset(dataset_two)
 
 # dataset 1
-print(evaluation)
-print(train)
+print(evaluation) 
+print(train) 
 print(test)
 
 # datset 2 
-print(dataset_two_validation)
-print(dataset_two_train)
+print(dataset_two_validation) 
+print(dataset_two_train) 
 print(dataset_two_test)
-
-
-
-
-
-
-
