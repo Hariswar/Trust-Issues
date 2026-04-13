@@ -1,0 +1,12 @@
+# Python cache
+__pycache__
+
+# Python Environments 
+.venv
+.env
+.ipynb_checkpoints
+.vscode
+
+# MacOS
+.DS_Store
+
