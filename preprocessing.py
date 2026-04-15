@@ -32,31 +32,42 @@ def clean_normalize_dataset(data):
     data = data.dropna()
     data = data.drop_duplicates(['text'])
     data = data.drop_duplicates(['title'])
+    # remove source at beginning of text
+    data['text'] = data['text'].str.replace(r'^[^-]*\(Reuters\)\s*-\s*', '', regex=True)
+    data['text'] = data['text'].str.replace(r'^[^-]*\(AP\)\s*-\s*', '', regex=True)
     text_data = data['text'].str.lower()
     title_data = data['title'].str.lower()
     data['text'] = text_data
     data['title'] = title_data
+    # remove urls 
+    data['text'] = data['text'].str.replace(url_check, '', regex=True)
+    data['title'] = data['title'].str.replace(url_check, '', regex=True)
+    # remove apostrophes directly
+    data['text'] = data['text'].str.replace(r"'", '', regex=True)
+    data['title'] = data['title'].str.replace(r"'", '', regex=True)
+    # replace other non-alphabetic characters (except spaces) with spaces to prevent concatenation
+    data['text'] = data['text'].str.replace(r"[^a-z\s]", ' ', regex=True)
+    data['title'] = data['title'].str.replace(r"[^a-z\s]", ' ', regex=True)
+    # remove common image/metadata/artifact words
+    artifacts = ['featured', 'image', 'video', 'getty', 'pic', 'screenshot', 'screengrab', 
+                 'flickr', 'boiler', 'acr', 'cdata', 'gettyimages', 'breitbart', 'wire',
+                 'read', 'watch', 'maher', 'belowfeatured']
+    for artifact in artifacts:
+        data['text'] = data['text'].str.replace(r'\b' + artifact + r'\b', '', regex=True)
+        data['title'] = data['title'].str.replace(r'\b' + artifact + r'\b', '', regex=True)
+    # normalize whitespace
+    data['text'] = data['text'].str.replace(whitespace_check, ' ', regex=True)
+    data['title'] = data['title'].str.replace(whitespace_check, ' ', regex=True)
     data['text'] = data['text'].str.strip()
     data['title'] = data['title'].str.strip()
-    whitespace = data['text'].str.replace(whitespace_check, ' ', regex=boolean)
-    whitespace_title = data['title'].str.replace(whitespace_check, ' ', regex=boolean)
-    data['text'] = whitespace
-    data['title'] = whitespace_title
-    url = data['text'].str.replace(url_check, '', regex=boolean)
-    url_title = data['title'].str.replace(url_check, '', regex=boolean)
-    data['text'] = url
-    data['title'] = url_title
-    characters = data['text'].str.replace(character_check, '', regex=boolean)
-    characters_title = data['title'].str.replace(character_check, '', regex=boolean)
-    data['text'] = characters
-    data['title'] = characters_title
-    check = data['text'].str.replace(symbol_check, '', regex=boolean)
-    check_title = data['title'].str.replace(symbol_check, '', regex=boolean)
-    data['text'] = check
-    data['title'] = check_title
+    # remove single-letter words
+    data['text'] = data['text'].str.replace(r'\b[a-z]\b', '', regex=True)
+    data['title'] = data['title'].str.replace(r'\b[a-z]\b', '', regex=True)
+    # final whitespace normalization
+    data['text'] = data['text'].str.replace(whitespace_check, ' ', regex=True)
+    data['title'] = data['title'].str.replace(whitespace_check, ' ', regex=True)
     data = data.drop_duplicates(['text'])
     data = data.drop_duplicates(['title'])
-
     rows = len(data)
     data = data.sample(n=rows, random_state=seed) 
     return data
