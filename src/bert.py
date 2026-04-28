@@ -58,7 +58,6 @@ CONFIG = {
 OUTPUT_DIR = Path(__file__).parent.parent / "outputs" 
 OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
-
 def save_model(model, tokenizer, dataset_name: str) -> Path:
     """
     Save a fine-tuned model and its tokenizer to disk so they can be
@@ -92,7 +91,7 @@ def save_model(model, tokenizer, dataset_name: str) -> Path:
     tokenizer.save_pretrained(save_dir)
     print(f"  Model saved → {save_dir}")
     return save_dir
- 
+
 
 # ── Dataset class ────────────────────────────────────────────────────────
 class FakeNewsDataset(Dataset):
@@ -208,7 +207,6 @@ def make_loader(df: pd.DataFrame, tokenizer, shuffle: bool) -> DataLoader:
         pin_memory=use_pin,
     )
 
-
 # ── Helper functions ───────────────────────────────────────────────
 def train_epoch(model, loader, optimizer, scheduler):
     """
@@ -267,7 +265,6 @@ def train_epoch(model, loader, optimizer, scheduler):
     avg_loss = total_loss / len(loader)
     accuracy = accuracy_score(all_labels, all_preds)
     return avg_loss, accuracy
-
 
 @torch.no_grad()
 def evaluate(model, loader, split_name: str):
