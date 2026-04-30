@@ -1,0 +1,63 @@
+
+Chunk-Level Analysis
+Title: Live from New York, it's a Trump-Clinton rematch - of sorts
+Article label (dataset): 1
+
+Chunk | Similarity | CitationDensity | CorrSim | Support | Score | HeuristicLabel
+----------------------------------------------------------------------------------------------
+    1 | 0.2131     | 0.0000         | 0.1757  |    2    | 0.0   | likely_true
+    counts: abs_outside=0, abs_in_quotes=0, attrib=0, entities=9
+    reasons: no citation cues, named entities without support cues, corroborated by another article,
+             corroborated by multiple articles
+    NEW YORK (Reuters) - Veteran actor and frequent host Alec Baldwin returned to “Saturday Night
+    Live” on Saturday, debuting his new gig playing a scowling, blustering Donald Trump, the
+    Republican nominee for U.S. president. The late night NBC comedy show, kicking off its 42nd
+    season, opened with an extended sketch featuring Baldwin as Trump facing off with a calculating,
+    cunning and smug Hillary Clinton, with Kate McKinnon reprising her turn as the Democratic
+    nominee. Much of the routine was lifted from the opponents’ Monday debate, including references
+    to talk show host and Trump nemesis Rosie O’Donnell, and vocal Trump backer, Fox News’ Sean
+    Hannity.
+    2 | 0.0556     | 0.0000         | 0.1088  |    0    | 2.0   | likely_false
+    counts: abs_outside=0, abs_in_quotes=0, attrib=2, entities=2
+    reasons: low title match (late chunk reduced), no citation cues, named entities without support
+             cues, low cross-article corroboration
+    Much of the routine was lifted from the opponents’ Monday debate, including references to talk
+    show host and Trump nemesis Rosie O’Donnell, and vocal Trump backer, Fox News’ Sean Hannity.
+    Baldwin began his Trump routine promising “I’m going to be so good tonight,” before issuing a
+    perfunctory response on jobs and economics. “End of story, I won the debate, I stayed calm just
+    like I promised, and it, is, over. Goodnight,” he proclaimed before walking away. Told by the
+    moderator there were still 88 minutes left, “Trump” responded, “My microphone is broken,” adding
+    “She broke it.
+    3 | 0.1117     | 0.0000         | 0.1411  |    0    | 2.0   | likely_false
+    counts: abs_outside=1, abs_in_quotes=0, attrib=1, entities=3
+    reasons: low title match (late chunk reduced), no citation cues, absolute claim words outside
+             quotes, named entities without support cues, low cross-article corroboration
+    Told by the moderator there were still 88 minutes left, “Trump” responded, “My microphone is
+    broken,” adding “She broke it. With Obama.” Asked what she thought of Trump’s rambling
+    discourse, a smirking McKinnon-as-Clinton replied “I think I’m going to be president.” The
+    audience for the live show applauded wildly. After a few more minutes of Baldwin-as-Trump’s
+    increasingly bizarre remarks, a swaggering Clinton asks “Can America vote right now?” Later,
+    fighting tears, she explained, “This is going so well. It’s going exactly how I always dreamed.”
+    The show’s writers made sure to take shots at the Democrat as well, including her referencing
+    beauty queen Alicia Machado as “a political prop that I almost forgot to mention”.
+    4 | 0.0694     | 0.0015         | 0.1221  |    0    | 0.8   | uncertain
+    counts: abs_outside=1, abs_in_quotes=0, attrib=1, entities=3
+    reasons: low title match (late chunk reduced), absolute claim words outside quotes, contains
+             citation phrase, named entities have support cues, low cross-article corroboration
+    It’s going exactly how I always dreamed.” The show’s writers made sure to take shots at the
+    Democrat as well, including her referencing beauty queen Alicia Machado as “a political prop
+    that I almost forgot to mention”. In her closing statement, Clinton said “Listen America, I get
+    it, you hate me.” She then threatened that “If you don’t elect me, I will continue to run for
+    president until the day I die.” Baldwin, who has hosted Saturday Night Live more than anyone in
+    its storied history, will be back as Trump until the November election, likely providing a
+    ratings spike for the show that has mined U.S. elections and politics for comic fodder since
+    1975.
+    5 | 0.0297     | 0.0000         | 0.1457  |    0    | 1.6   | likely_false
+    counts: abs_outside=0, abs_in_quotes=0, attrib=0, entities=0
+    reasons: low title match (late chunk reduced), no citation cues, low cross-article corroboration
+    elections and politics for comic fodder since 1975. Trump himself appeared on the show as host
+    in November 2015, when he was campaigning to win the Republican nomination.
+
+Label Summary
+  likely_true=1, uncertain=1, likely_false=3
+  mean_chunk_score=1.260

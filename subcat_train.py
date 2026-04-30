@@ -12,7 +12,11 @@ from sklearn.metrics import (
 from sklearn.naive_bayes import MultinomialNB
 from sklearn.svm import LinearSVC
 
-from preprocessing import clean_normalize_dataset, read_test, read_train
+from preprocessing import (
+    clean_normalize_dataset,
+    read_test,
+    read_train,
+)
 
 
 # Rule 1: title/body mismatch.
