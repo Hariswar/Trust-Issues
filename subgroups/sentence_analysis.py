@@ -7,6 +7,10 @@ import pandas as pd
 from pathlib import Path
 from sklearn.feature_extraction.text import TfidfVectorizer
 
+PROJECT_ROOT = Path(__file__).resolve().parent.parent
+if str(PROJECT_ROOT) not in sys.path:
+    sys.path.insert(0, str(PROJECT_ROOT))
+
 from dataset import path_one
 
 
@@ -647,7 +651,7 @@ def main():
         full_penalty_chunks=max(0, args.title_full_penalty_chunks),
     )
 
-    output_path = Path("analysis_output.txt")
+    output_path = Path(__file__).resolve().parent / "analysis_output.txt"
     with output_path.open("w", encoding="utf-8") as f:
         # Tee all print output to both terminal and file.
         class _Tee:
