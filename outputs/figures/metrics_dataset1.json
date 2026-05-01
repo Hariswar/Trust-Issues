@@ -1,0 +1,193 @@
+{
+  "dataset": "dataset1",
+  "n_samples_evaluated": 200,
+  "accuracy": 0.99,
+  "per_class": {
+    "Real": {
+      "precision": 0.9806,
+      "recall": 1.0,
+      "f1-score": 0.9902,
+      "support": 101.0
+    },
+    "Fake": {
+      "precision": 1.0,
+      "recall": 0.9798,
+      "f1-score": 0.9898,
+      "support": 99.0
+    }
+  },
+  "confusion_matrix": [
+    [
+      101,
+      0
+    ],
+    [
+      2,
+      97
+    ]
+  ],
+  "top_fake_words": [
+    [
+      "nikki",
+      0.3337
+    ],
+    [
+      "watch",
+      0.3328
+    ],
+    [
+      "inspectors",
+      0.308
+    ],
+    [
+      "pushing",
+      0.2887
+    ],
+    [
+      "haley",
+      0.2674
+    ],
+    [
+      "respects",
+      0.2633
+    ],
+    [
+      "pressure",
+      0.2079
+    ],
+    [
+      "sites",
+      0.2012
+    ],
+    [
+      "happen",
+      0.1992
+    ],
+    [
+      "ambassador",
+      0.1673
+    ],
+    [
+      "worst",
+      0.1555
+    ],
+    [
+      "check",
+      0.1554
+    ],
+    [
+      "ted",
+      0.119
+    ],
+    [
+      "ever",
+      0.1175
+    ],
+    [
+      "rub",
+      0.1168
+    ],
+    [
+      "review",
+      0.1122
+    ],
+    [
+      "negotiated",
+      0.1032
+    ],
+    [
+      "inc",
+      0.0995
+    ],
+    [
+      "saw",
+      0.0889
+    ],
+    [
+      "debate",
+      0.0878
+    ]
+  ],
+  "top_real_words": [
+    [
+      "officially",
+      0.471
+    ],
+    [
+      "dem",
+      0.4112
+    ],
+    [
+      "iowa",
+      0.2804
+    ],
+    [
+      "honest",
+      0.242
+    ],
+    [
+      "jon",
+      0.2131
+    ],
+    [
+      "debate",
+      0.2106
+    ],
+    [
+      "nevada",
+      0.207
+    ],
+    [
+      "didn",
+      0.192
+    ],
+    [
+      "thursday",
+      0.1728
+    ],
+    [
+      "fox",
+      0.1728
+    ],
+    [
+      "event",
+      0.1688
+    ],
+    [
+      "massive",
+      0.1559
+    ],
+    [
+      "full",
+      0.1526
+    ],
+    [
+      "process",
+      0.1356
+    ],
+    [
+      "voter",
+      0.1323
+    ],
+    [
+      "hampshire",
+      0.1299
+    ],
+    [
+      "few",
+      0.1292
+    ],
+    [
+      "test",
+      0.125
+    ],
+    [
+      "videos",
+      0.1241
+    ],
+    [
+      "days",
+      0.1228
+    ]
+  ]
+}

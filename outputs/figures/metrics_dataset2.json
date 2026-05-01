@@ -1,0 +1,193 @@
+{
+  "dataset": "dataset2",
+  "n_samples_evaluated": 200,
+  "accuracy": 0.96,
+  "per_class": {
+    "Real": {
+      "precision": 0.9912,
+      "recall": 0.9412,
+      "f1-score": 0.9655,
+      "support": 119.0
+    },
+    "Fake": {
+      "precision": 0.9195,
+      "recall": 0.9877,
+      "f1-score": 0.9524,
+      "support": 81.0
+    }
+  },
+  "confusion_matrix": [
+    [
+      112,
+      7
+    ],
+    [
+      1,
+      80
+    ]
+  ],
+  "top_fake_words": [
+    [
+      "data",
+      0.4185
+    ],
+    [
+      "opposition",
+      0.3531
+    ],
+    [
+      "shows",
+      0.3345
+    ],
+    [
+      "controversial",
+      0.3228
+    ],
+    [
+      "shocking",
+      0.3084
+    ],
+    [
+      "billionaire",
+      0.2889
+    ],
+    [
+      "straight",
+      0.2789
+    ],
+    [
+      "cops",
+      0.2679
+    ],
+    [
+      "alleged",
+      0.2489
+    ],
+    [
+      "fake",
+      0.2254
+    ],
+    [
+      "org",
+      0.2136
+    ],
+    [
+      "expose",
+      0.2054
+    ],
+    [
+      "checks",
+      0.2046
+    ],
+    [
+      "everything",
+      0.1924
+    ],
+    [
+      "explains",
+      0.1916
+    ],
+    [
+      "wednesday",
+      0.1891
+    ],
+    [
+      "gov",
+      0.1887
+    ],
+    [
+      "chart",
+      0.1834
+    ],
+    [
+      "supports",
+      0.1788
+    ],
+    [
+      "honest",
+      0.1713
+    ]
+  ],
+  "top_real_words": [
+    [
+      "dem",
+      1.8649
+    ],
+    [
+      "congressional",
+      1.2353
+    ],
+    [
+      "hollywood",
+      1.1077
+    ],
+    [
+      "georgia",
+      0.7028
+    ],
+    [
+      "candidate",
+      0.5991
+    ],
+    [
+      "twitter",
+      0.5937
+    ],
+    [
+      "issue",
+      0.5759
+    ],
+    [
+      "almost",
+      0.5334
+    ],
+    [
+      "blasts",
+      0.4951
+    ],
+    [
+      "reportedly",
+      0.47
+    ],
+    [
+      "pratt",
+      0.4181
+    ],
+    [
+      "chris",
+      0.4013
+    ],
+    [
+      "exclusive",
+      0.3663
+    ],
+    [
+      "cnn",
+      0.3662
+    ],
+    [
+      "volume",
+      0.3449
+    ],
+    [
+      "jon",
+      0.3317
+    ],
+    [
+      "vote",
+      0.3307
+    ],
+    [
+      "language",
+      0.3153
+    ],
+    [
+      "ins",
+      0.3094
+    ],
+    [
+      "deaf",
+      0.2982
+    ]
+  ]
+}
